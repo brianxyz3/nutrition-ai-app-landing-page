@@ -1,0 +1,221 @@
+/* CSS RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    display: block;
+}
+
+li {
+    list-style: none;
+}
+
+/* GENERAL STYLE */
+body {
+    margin: 0 1rem;
+    overflow-x: hidden;
+}
+
+header .container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 2rem 3.5rem;
+}
+
+nav .nav_content {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1.7rem;
+    margin-bottom: 5rem;
+}
+
+nav .nav_content .nav_links {
+    display: flex;
+    justify-content: space-between;
+    width: clamp(250px, 400px, 55%);
+}
+
+header .hero_title_text {
+    font-size: clamp(2rem, 3rem, 5rem);
+    margin-bottom: 1rem;
+}
+
+header .hero_desc_text span{
+    color: #1bcf93;
+}
+
+header .hero_desc_text {
+    color: gray;
+}
+
+header section .feature_pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    color: #808080;
+    margin-top: 2.5rem;
+}
+
+header section .feature_pills li {
+    border: 1px solid #d7d9d9;
+    border-radius: 1rem;
+    padding: 0.5rem 0.8rem;
+}
+
+header .hero_img {
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap; 
+}
+
+header .hero_img div:first-child {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 3.5rem;
+    height: 3.5rem;
+    clip-path: circle(50%);
+    background-color: #05ba7e;
+}
+
+header .hero_img img {
+    border: 2px solid #1bcf93;
+    border-radius: 0 5rem 0 5rem;
+    clip-path: path("M 105,0 L 700,0 L 700,400 A 100,100 0,0,1 620,480 L 455,480 A 60,60 0,0,0 385,540 L 385,550 A 60,60 0,0,1 315,600 L 0,600 L 0,120 A 60,60 0,0,1 40,80 L 55,80 A 30,30 0,0,0 90,45 L 90,30 A 60,60 0,0,1 120,0 Z");
+}
+
+header .sponsor_banner {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+main {
+    margin: 3rem 0;
+}
+
+main .features_container {
+    text-align: center;
+}
+
+main .features_container .container_first_pill{
+    display: inline-block;
+    color: #808080;
+    border: 1px solid #1bcf93;
+    padding: 0.3rem 0.8rem;
+    border-radius: 1rem;
+}
+
+main .features_container h2 {
+    font-size: clamp(1rem, 2.5rem, 3rem);
+    margin: 1.2rem 0;
+}
+
+main .features_container .container_second_pill {
+    width: clamp(300px, 370px, 450px);
+    color: #808080;
+    margin: 0 auto;
+}
+
+main .features_collection {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    row-gap: 8px;
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+}
+
+main .features_collection .features_card {
+    width: clamp(250px, 350px, 500px);
+    border: 1px solid #1bcf93;
+    padding: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    border-radius: 1rem;
+}
+
+.features_card h4 {
+    color: #05ba7e;
+    font-size: clamp(0.5rem, 1.3rem, 1.7rem);
+}
+
+.features_collection .features_card p {
+    text-align: left;
+}
+
+main .features_collection .features_card img {
+    border-radius: 1.5rem;
+}
+
+main .benefits_container .container_second_pill{
+    width: clamp(350px, 500px, 600px);
+    margin-bottom: 2rem;
+}
+
+main .benefits {
+    text-align: left;
+    width: auto;
+    height: 600px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 3rem;
+}
+
+.benefits ul {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.benefits img {
+    width: 700px;
+    height: 100%;
+    border-radius: 2rem;
+}
+
+main .benefits ul li {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 15px;
+}
+
+main .benefits ul li div:first-child {
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #a4f3d9;
+    border-radius: 50%;
+}
+
+main .benefits ul li:nth-child(3) {
+    background-image: linear-gradient( to right, #0ad28f, #c8f8e8 90%);
+    border-radius: 1.5rem 0 0 1.5rem;
+}
+
+main .benefits ul li:nth-child(3) div:first-child{
+    background-color: #fff;
+}
+
+main .benefits ul li h5 {
+    font-size: clamp(20px, 35px, 40px);
+    font-weight: lighter;
+}
+
+main .benefits ul li p {
+    font-size: clamp(15px, 20px, 30px);
+    color: #808080;
+    margin-top: 5px;
+}
