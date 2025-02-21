@@ -15,16 +15,12 @@ li {
 
 /* GENERAL STYLE */
 body {
-    margin: 0 auto;
-        padding: 0 1rem;
     overflow-x: hidden;
 }
 
-/* header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-} */
+header {
+    padding: 0 1rem;
+}
 header .container{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -33,19 +29,32 @@ header .container{
 
 nav .nav_content {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    padding-top: 1.7rem;
-    margin-bottom: 5rem;
+    padding: 1.7rem 0;
 }
 
 nav .nav_content .nav_links {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
+        border: 1px solid #05ba7e;
+        border-radius: 3rem;
+        padding: 0.6rem 0;
     width: clamp(250px, 400px, 55%);
 }
 
+.nav_content .nav_links li:hover div {
+    transform: translateY(-2px);
+    box-shadow: 0 3px #000;
+    transition: all 200ms ease-in-out;
+}
+
+nav .nav_content .nav_links li {
+    cursor: pointer;
+    border-bottom: 1px solid #05ba7e;
+}
 header .hero_title_text {
-    font-size: clamp(2rem, 3rem, 5rem);
+font-size: clamp(1.5rem, 2rem, 3rem);
     margin-bottom: 1rem;
 }
 
@@ -59,17 +68,17 @@ header .call_to_action a {
     display: flex;
     text-decoration: none;
     align-items: center;
-    gap: 7px;
-    padding: 0.7rem;
+    gap: 5px;
+        padding: 0.5rem;
     border-radius: 0.8rem;
-    font-size: clamp(0.3rem, 0.6rem, 0.9rem);
+    font-size: clamp(0.5rem, 0.6rem, 0.9rem);
     color: #fff;
     background-color: #000;
     text-wrap: nowrap;
 }
 
 header .call_to_action a h3 {
-    font-size: clamp(0.5rem, 1rem, 1.2rem);
+    font-size: clamp(0.7rem, 0.8rem, 1.2rem);
 }
 header .hero_desc_text span{
     color: #1bcf93;
@@ -82,7 +91,8 @@ header .hero_desc_text {
 header section .feature_pills {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
+    row-gap: 0.5rem;
+        column-gap: 1rem;
     color: #808080;
     margin-top: 2.5rem;
 }
@@ -125,9 +135,8 @@ header .hero_img .img {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    border: 2px solid #1bcf93;
     border-radius: 0 5rem 0 5rem;
-    clip-path: path("M 105,0 L 700,0 L 700,400 A 100,100 0,0,1 620,480 L 455,480 A 60,60 0,0,0 385,540 L 385,550 A 60,60 0,0,1 315,600 L 0,600 L 0,120 A 60,60 0,0,1 45,80 L 55,80 A 30,30 0,0,0 90,45 L 90,45 A 40,40 0,0,1 120,0 Z");
+    clip-path: path("M 84,0 L 700,0 L 700,400 A 100,100 0,0,1 620,480 L 455,480 A 60,60 0,0,0 385,540 L 385,550 A 60,60 0,0,1 315,600 L 0,600 L 0,120 A 60,60 0,0,1 45,80 L 55,80 A 30,30 0,0,0 90,45 L 90,45 A 40,40 0,0,1 120,0 Z");
     }
     
     header .hero_img .athletes_img {
@@ -135,33 +144,43 @@ header .hero_img .img {
         display: flex;
         justify-content: center;
         align-items: center;
+        object-fit: cover;
+            object-position: top;
         width: 7rem;
         height: 7rem;
         clip-path: circle(50%);
     }
-                header .hero_img .one {
-                    background-color: red;
-                    bottom: 0;
-                    right: 25%;
-                    z-index: -1;
-                }
-        
-                header .hero_img .two {
-                    background-color: #05ba7e;
-                    bottom: 0;
-                    right: 12%;
-                    z-index: 1;
-                }
-header .sponsor_banner {
+
+header .hero_img .one {
+    background-color: red;
+    bottom: 0;
+    right: 25%;
+    z-index: -1;
+}
+
+header .hero_img .two {
+    background-color: #05ba7e;
+    bottom: 0;
+    right: 12%;
+    z-index: 1;
+}
+.sponsor_banner {
     display: flex;
     justify-content: space-evenly;
+    padding: 0.5rem 0;
+        border-bottom: 1px solid #05ba7e;
+        border-top: 1px solid #05ba7e;
 }
 
 main {
-    margin: 3rem 0;
+    margin: 3rem 1rem;
     text-align: center;
 }
 
+main section {
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+}
 main .container_first_pill {
     display: inline-block;
     color: #808080;
@@ -176,7 +195,7 @@ main h2 {
 }
 
 main .container_second_pill {
-    width: clamp(300px, 370px, 450px);
+    width: clamp(250px, 370px, 450px);
     color: #808080;
     margin: 0 auto;
 }
@@ -185,9 +204,8 @@ main .features_collection {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    row-gap: 8px;
+    row-gap: 1rem;
     margin-top: 2rem;
-    margin-bottom: 5rem;
 }
 
 main .features_collection .features_card {
@@ -217,7 +235,7 @@ main .features_collection .features_card img {
 main .benefits_container {
     margin-bottom: 5rem;
 }
-main .benefits_container .container_second_pill{
+main .benefits_container .container_second_pill {
     width: clamp(350px, 500px, 600px);
     margin-bottom: 2rem;
 }
@@ -227,9 +245,8 @@ main .benefits {
     width: auto;
     height: 550px;
     display: flex;
-    flex-wrap: 1;
     justify-content: space-between;
-    margin: 0 3rem;
+    margin: 1rem 3rem;
 }
 
 .benefits ul {
@@ -238,6 +255,7 @@ main .benefits {
     flex-direction: column;
     justify-content: space-between;
 }
+
 .benefits img {
     width: 550px;
     height: 100%;
@@ -263,28 +281,30 @@ main .benefits ul li div:first-child {
 }
 
 main .benefits ul li:nth-child(3) {
-    background-image: linear-gradient( to right, #0ad28f, #c8f8e8 90%);
+    background-image: linear-gradient(to right, #0ad28f, #c8f8e8 90%);
     color: #fff;
     border-radius: 1.5rem 0 0 1.5rem;
 }
 
-main .benefits ul li:nth-child(3) div:first-child{
+main .benefits ul li:nth-child(3) div:first-child {
     background-color: #fff;
 }
 
 main .benefits ul li:nth-child(3) p {
     color: #fff;
 }
+
 main .benefits ul li h5 {
-    font-size: clamp(16px, 28px, 35px);
+    font-size: clamp(16px, 20px, 25px);
     font-weight: lighter;
 }
 
 .benefits ul li p {
-    font-size: clamp(12px, 18px, 25px);
+    font-size: clamp(12px, 15px, 20px);
     color: #808080;
     margin-top: 5px;
 }
+
 main .faq_container ul {
     display: flex;
     flex-direction: column;
@@ -297,10 +317,11 @@ main .faq_container ul {
 .faq_container ul li {
     display: flex;
     flex-direction: column;
+    cursor: pointer;
 }
 
 .faq_container ul li .accordion_title {
-    padding: 1.5rem 2.5rem;
+    padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -311,9 +332,8 @@ main .faq_container ul {
 .faq_container ul li .accordion_title>div {
     background-color: transparent;
     display: flex;
-    fill: #05ba7e;
-    justify-content: center;
     align-items: center;
+    fill: #05ba7e;
     border-radius: 50%;
 }
 
@@ -327,24 +347,24 @@ main .faq_container ul {
 .faq_container ul li div:has(.active) {
     border: 1px solid #a8fbdf;
     background-color: transparent;
-    border-bottom: 6px solid #05ba7e;
+    border-bottom: 3px solid #05ba7e;
     transition: all 300ms ease-out;
 }
 
 .faq_container ul li h3 {
-    font-size: 2rem;
+    font-size: 1.2rem;
 }
 
 .faq_container ul li div:has(.show_desc) {
     height: auto;
     opacity: 1;
     transform: scaleY(1);
-        transform-origin: top;
+    transform-origin: top;
         transition: all 300ms ease-out;
 }
 
 .faq_container ul li p {
-    font-size: 20px;
+    font-size: 14px;
     line-height: 2rem;
     margin: 3rem 2rem;
 }
@@ -355,5 +375,453 @@ main .faq_container ul {
     background-color: #bdf2e04f;
     opacity: 0;
     transform-origin: top;
-        transform: scaleY(0);
+    transform: scaleY(0);
+    transition: all 150ms ease-out;
+    }
+    
+    main .article_container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        text-align: left;
+    }
+    
+    main .article_container div,
+    .article_container img {
+        width: clamp(250px, 300px, 400px);
+    }
+    
+    .article_container img {
+        border-radius: 1rem;
+        height: clamp(150px, 250px, 300px);
+    }
+    
+    main .article_container div p {
+        font-size: clamp(0.7rem, 0.9rem, 1.2rem);
+        line-height: 1.5rem;
+        margin-top: 1rem;
+    }
+    
+    footer {
+        margin-top: 10rem;
+        text-align: center;
+        position: relative;
+    }
+    
+    footer .footer_top {
+        width: clamp(350px, 30%, 500px);
+        height: auto;
+        margin: 0 auto;
+        text-align: left;
+        background-color: #000;
+        color: #fff;
+        padding: 2rem 3rem;
+        border-radius: 2rem;
+        position: absolute;
+        right: 50%;
+        transform: translateX(50%);
+        top: -5.2rem;
+    }
+    
+    footer .copyright {
+        color: #fff;
+        margin: 0 auto;
+        width: 80%;
+        height: clamp(10rem, 13rem, 15rem);
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        padding: 4rem;
+        border-radius: 2rem 2rem 0 0;
+        background-color: #1a1919;
+    }
+    
+    @media only screen and (max-width:1024px) {
+        header .container {
+            display: flex;
+            justify-content: center;
+            margin: 1rem 0;
+        }
+    
+        nav .nav_content {
+            padding: 0;
+            margin: 1rem 0 2rem;
+        }
+    
+        header .hero_desc_text {
+            color: #808080;
+            line-height: 1.2rem;
+        }
+    
+        .call_to_action img {
+            width: 20px;
+            height: 20px;
+        }
+    
+        header section .feature_pills {
+            display: flex;
+            flex-wrap: wrap;
+            row-gap: 0.5rem;
+            column-gap: 0.5rem;
+            color: #808080;
+            margin: 1.5rem auto;
+        }
+    
+        header .hero_img {
+            min-width: 400px;
+            height: fit-content;
+        }
+    
+        header .hero_img div:first-child {
+            top: 10px;
+            left: 20px;
+            width: 2rem;
+            height: 2rem;
+        }
+    
+        header .hero_img div:first-child svg {
+            width: 20px;
+            height: 20px;
+        }
+    
+        header .hero_img .img {
+            width: 400px;
+            height: 340px;
+            clip-path: path("M 50,0 L 400,0 L 400,230 A 60,60 0,0,1 360,280 L 310,280 A 60,60 0,0,0 250,310 A 50,50 0,0,1 190,340 L 0,340 L 0,75 A 30,30 0,0,1 29,50 L 34,50 A 20,20 0,0,0 58,30 A 30,30 0,0,1 90,0 Z");
+        }
+    
+        header .hero_img .athletes_img {
+            width: 3rem;
+            height: 3rem;
+        }
+    
+        header .hero_img .one {
+            bottom: 0;
+            right: 20%;
+        }
+    
+        header .hero_img .two {
+            bottom: 0;
+            right: 10%;
+        }
+    
+        main {
+            margin: 3rem 0;
+            text-align: center;
+        }
+    
+        main .benefits {
+            height: 350px;
+            margin: 1rem 2rem;
+        }
+    
+        .benefits ul {
+            width: 100%;
+            display: flex;
+        }
+    
+        .benefits img {
+            width: 350px;
+            height: 100%;
+            border-radius: 2rem;
+        }
+    
+        main .benefits ul li {
+            padding: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+    
+        main .benefits ul li div:first-child {
+            width: 2.5rem;
+            height: 2.5rem;
+        }
+    
+        main .benefits ul li div:first-child svg {
+            width: 20px;
+            height: 20px;
+        }
+    
+        main .benefits ul li h5 {
+            font-size: clamp(0.8rem, 1rem, 2rem);
+            font-weight: lighter;
+        }
+    
+        .benefits ul li p {
+            font-size: clamp(8px, 12px, 15px);
+            color: #808080;
+            margin-top: 5px;
+        }
+    
+        .faq_container ul li .accordion_title {
+            padding: 0.8rem 1.5rem;
+        }
+    
+        .faq_container ul li h3 {
+            font-size: 1.2rem;
+        }
+    
+        .faq_container ul li p {
+            font-size: 15px;
+            line-height: 1.2rem;
+            margin: 2rem 1rem;
+        }
+    
+        main .article_container {
+            row-gap: 1rem;
+        }
+    }
+    
+    @media only screen and (max-width:750px) {
+        header .container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 0.5rem 0 1rem;
+        }
+    
+    
+        nav .nav_content {
+            padding: 4px 8px;
+            width: 100%;
+            align-items: center;
+            font-size: 0.8rem;
+            gap: 10px;
+            margin: 0 0 1rem;
+        }
+    
+        nav .nav_links {
+            padding: 4px 8px;
+            border-radius: 1rem;
+            gap: 4px;
+        }
+    
+        header .hero_title_text {
+            /* text-align: center; */
+            font-size: 1.7rem;
+        }
+    
+        header .hero_desc_text {
+            color: #808080;
+            line-height: 1.2rem;
+        }
+    
+        header section .feature_pills {
+            display: flex;
+            flex-wrap: wrap;
+            row-gap: 0.5rem;
+            column-gap: 0.5rem;
+            color: #808080;
+            margin: 1.5rem auto;
+        }
+    
+        header .hero_img {
+            min-width: 300px;
+            height: fit-content;
+            margin-bottom: 2rem;
+        }
+    
+        header .hero_img div:first-child {
+            top: 10px;
+            left: 20px;
+            width: 2rem;
+            height: 2rem;
+        }
+    
+        header .hero_img div:first-child svg {
+            width: 20px;
+            height: 20px;
+        }
+    
+        header .hero_img .img {
+            width: 300px;
+            height: 240px;
+            border-radius: 3rem;
+            clip-path: path("M 50,0 L 300,0 L 300,130 A 55,55 0,0,1 240,180 L 200,180 A 30,30 0,0,0 180,210 A 40,40 0,0,1 140,240 L 0,240 L 0,75 A 30,30 0,0,1 29,50 L 34,50 A 20,20 0,0,0 58,30 A 30,30 0,0,1 90,0 Z");
+        }
+    
+        header .hero_img .athletes_img {
+            width: 3rem;
+            height: 3rem;
+        }
+    
+        header .hero_img .two {
+            bottom: 0;
+            right: 8%;
+        }
+    
+        main {
+            margin: 3rem 0;
+            text-align: center;
+        }
+    
+        main .container_first_pill {
+            font-size: 0.8rem;
+        }
+    
+        main h2 {
+            font-size: clamp(1rem, 1.5rem, 2rem);
+            margin: 1rem 0;
+        }
+    
+        main .container_second_pill {
+            max-width: clamp(150px, 250px, 350px);
+        }
+    
+        main .features_collection {
+            row-gap: 8px;
+            margin-top: 2rem;
+        }
+    
+        main .features_collection .features_card {
+            width: clamp(150px, 250px, 300px);
+            border: 1px solid #1bcf93;
+            padding: 0.8rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.8rem;
+            border-radius: 1rem;
+        }
+    
+        .features_card h4 {
+            color: #05ba7e;
+            font-size: clamp(0.5rem, 1rem, 1.3rem);
+        }
+    
+        .features_card img {
+            width: 230px;
+            height: 150px;
+        }
+    
+        .features_card p {
+            font-size: clamp(0.5rem, 0.7rem, 0.9rem);
+        }
+    
+        main .benefits {
+            height: auto;
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap-reverse;
+            justify-content: center;
+            margin: 1rem 0;
+        }
+    
+        .benefits ul {
+            width: 95%;
+        }
+    
+        .benefits img {
+            width: 250px;
+            height: 250px;
+            border-radius: 2rem;
+        }
+    
+        main .benefits ul li {
+            padding: 0.8rem;
+            width: 100%;
+            gap: 10px;
+        }
+    
+        main .benefits ul li div:first-child {
+            width: 3rem;
+            height: 3rem;
+        }
+    
+        main .benefits ul li:nth-child(3) {
+            border-radius: 1.5rem;
+        }
+    
+        main .benefits ul li h5 {
+            font-size: clamp(16px, 20px, 28px);
+            font-weight: lighter;
+        }
+    
+        .benefits ul li p {
+            font-size: clamp(8px, 12px, 18px);
+            color: #808080;
+            margin-top: 5px;
+        }
+    
+    
+        main .faq_container ul {
+            width: 90%;
+        }
+    
+        .faq_container ul li {
+            width: 100%;
+            padding: 0.8rem 1rem;
+        }
+    
+        .faq_container ul li .accordion_title>div {
+            background-color: transparent;
+            display: flex;
+            fill: #05ba7e;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+        }
+    
+        .faq_container ul li h3 {
+            font-size: 1rem;
+        }
+    
+        .faq_container ul li p {
+            font-size: 12px;
+            line-height: 1rem;
+            margin: 1.5rem 1rem;
+        }
+    
+        main .article_container {
+            row-gap: 1rem;
+        }
+    
+        main .article_container div,
+        .article_container img {
+            width: clamp(200px, 300px, 350px);
+        }
+    
+        .article_container img {
+            border-radius: 1rem;
+            height: clamp(150px, 200px, 300px);
+        }
+    
+        main .article_container div p {
+            font-size: clamp(0.6rem, 0.8rem, 1.2rem);
+            line-height: 1.5rem;
+            margin-top: 1rem;
+        }
+    
+        footer {
+            margin-top: 10rem;
+            text-align: center;
+            position: relative;
+        }
+    
+        footer .footer_top {
+            width: clamp(250px, 30%, 500px);
+            font-size: 0.8rem;
+            height: auto;
+            margin: 0 auto;
+            text-align: left;
+            background-color: #000;
+            color: #fff;
+            padding: 1.5rem 2rem;
+            border-radius: 2rem;
+            position: absolute;
+            right: 50%;
+            transform: translateX(50%);
+            top: -5.2rem;
+        }
+    
+        footer .copyright {
+            color: #fff;
+            margin: 0;
+            width: 100%;
+            height: clamp(10rem, 13rem, 15rem);
+            padding: 4rem 0 2rem;
+            border-radius: 0.5rem 0.5rem 0 0;
+            background-color: #1a1919;
+        }
 }
